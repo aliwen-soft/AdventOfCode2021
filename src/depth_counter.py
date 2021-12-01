@@ -26,11 +26,11 @@ def apply_window_count(depths, window):
 
 #1766
 def day_one_part_one():
-    depths = read_in_depths("data/input")
+    depths = read_in_depths("_data/day_one")
     return count_increases(depths)
 
 #1797
 def day_one_part_two():
-    depths = read_in_depths("data/input")
+    depths = read_in_depths("data/day_one")
     window_count_depths = apply_window_count(depths, 3)
     return count_increases(window_count_depths)
