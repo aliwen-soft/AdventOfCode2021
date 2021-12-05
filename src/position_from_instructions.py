@@ -56,6 +56,6 @@ def day_two_part_two():
     (horizontal_position, depth, _) = follow_commands_with_aim(
         file_name='data/day_two.txt'
     )
-
     return horizontal_position * depth
 
+print(day_two_part_two())
