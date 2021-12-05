@@ -1,6 +1,3 @@
-from typing import Counter
-
-
 def read_in_diagnostic_data(file_name):
     with open(file_name) as file:
         lines = file.readlines()
