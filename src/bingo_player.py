@@ -35,7 +35,7 @@ def play_bingo(selected_numbers, boards):
             
         completing_board_ids, completing_board_current_indices = check_for_completed_boards(selection_markers, board_ids)
         for i, completing_board_id in enumerate(completing_board_ids):
-            print(f'board {completing_board_id} complete at round {round_number}')
+            # print(f'board {completing_board_id} complete at round {round_number}')
             completing_round_numbers[completing_board_id] = round_number
             scores[completing_board_id] = find_score(
                 boards[completing_board_current_indices[i]], 
@@ -124,8 +124,9 @@ def day_four_part_one():
     winning_board_number = np.nanargmin(completing_round_numbers)
     winning_score = scores[winning_board_number]
 
-    print(f'Winning board number: {winning_board_number}\n'
-          f'Winning score: {winning_score}')
+    # print(f'Winning board number: {winning_board_number}\n'
+    #       f'Winning score: {winning_score}')
+    return winning_score
 
 def day_four_part_two():
     selected_numbers, boards = read_bingo('data/day_four.txt')
@@ -135,5 +136,9 @@ def day_four_part_two():
     last_to_complete_board_number = np.nanargmax(completing_round_numbers)
     last_to_complete_score = scores[last_to_complete_board_number]
 
-    print(f'Last-to-complete board number: {last_to_complete_board_number}\n'
-          f'Last-to-complete score: {last_to_complete_score}')
+    # print(f'Last-to-complete board number: {last_to_complete_board_number}\n'
+    #       f'Last-to-complete score: {last_to_complete_score}')
+    return last_to_complete_score
+
+print(day_four_part_one())
+print(day_four_part_two())

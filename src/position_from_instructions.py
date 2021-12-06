@@ -58,4 +58,5 @@ def day_two_part_two():
     )
     return horizontal_position * depth
 
+print(day_two_part_one())
 print(day_two_part_two())

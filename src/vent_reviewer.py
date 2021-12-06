@@ -47,7 +47,7 @@ def plot_vent_line(grid, line):
         return plot_horizontal_line(grid, line[0][1], start, end)
     else:
         #part 1
-        #return grid
+        # return grid
         #part 2
         x_direction = 1 if line[0][0] < line[1][0] else -1
         y_direction = 1 if line[0][1] < line[1][1] else -1

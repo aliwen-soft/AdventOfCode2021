@@ -36,3 +36,6 @@ def day_one_part_two():
     depths = read_in_depths("data/day_one.txt")
     window_count_depths = apply_window_count(depths, 3)
     return count_increases(window_count_depths)
+
+print(day_one_part_one())
+print(day_one_part_two())

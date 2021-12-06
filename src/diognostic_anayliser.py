@@ -62,5 +62,6 @@ def day_three_part_two():
     lines = read_in_diagnostic_data("data/day_three.txt")
     oxygen, co2 = get_oxygen_and_co_rates(lines)
     return oxygen * co2
-    
+
+print(day_three_part_one())
 print(day_three_part_two())
