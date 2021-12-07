@@ -3,7 +3,7 @@ def read_in_postions(file_name):
         data = file.readline()
         return [int(n) for n in data.rstrip().split(",")]
 
-def get_score_for_n_linier(positions, n):
+def get_score_for_n_linear(positions, n):
     positions_diff = map(lambda p: abs(p-n), positions)
     fuel = sum(positions_diff)
     return fuel
@@ -21,7 +21,7 @@ def day_seven_part_one(test=False):
 
     min_pos, max_pos = (min(positions), max(positions))
 
-    fuel_use = [get_score_for_n_linier(positions,i) for i in range(min_pos, max_pos+1)]
+    fuel_use = [get_score_for_n_linear(positions,i) for i in range(min_pos, max_pos+1)]
 
     return(min(fuel_use))
 
@@ -37,9 +37,7 @@ def day_seven_part_two(test=False):
     return(min(fuel_use))
 
 
-
-    
-
-
-# print(day_seven_part_one(test=False))
-print(day_seven_part_two(test=False))
+print(day_seven_part_one(test=True))
+print(day_seven_part_one())
+print(day_seven_part_two(test=True))
+print(day_seven_part_two())
