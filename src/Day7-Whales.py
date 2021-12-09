@@ -13,17 +13,21 @@ def get_score_for_n_exp(positions, n):
     fuel = sum(position_costs)
     return fuel
 
+def get_median(positions):
+    sorted_positions = sorted(positions)
+    length = len(positions)
+    position = -(-(length - 1)//2)
+    return sorted_positions[position]
 
 def day_seven_part_one(test=False):
     file_name = "data/day_seven_test.txt" if test else "data/day_seven.txt"
 
     positions = read_in_postions(file_name)
 
-    min_pos, max_pos = (min(positions), max(positions))
+    medium = get_median(positions)
 
-    fuel_use = [get_score_for_n_linier(positions,i) for i in range(min_pos, max_pos+1)]
+    return get_score_for_n_linier(positions,medium)
 
-    return(min(fuel_use))
 
 def day_seven_part_two(test=False):
     file_name = "data/day_seven_test.txt" if test else "data/day_seven.txt"
@@ -41,5 +45,6 @@ def day_seven_part_two(test=False):
     
 
 
-# print(day_seven_part_one(test=False))
-print(day_seven_part_two(test=False))
+print(day_seven_part_one(test=False))
+
+#print(day_seven_part_two(test=False))
