@@ -25,18 +25,7 @@ def increment_population_counts(population_counts):
     updated_population_counts.append(population_counts[0])
     return updated_population_counts
 
-def day_six_part_one(test=False):
-    if test:
-        population = read_initial_population('data/day_six_test.txt')
-    else:
-        population = read_initial_population('data/day_six.txt')
-    
-    for _ in range(256):
-        population = increment_population(population)
-    
-    return(len(population))
-
-def day_six_part_two(test=False):
+def day_six_part_one(test=False, days=80):
     if test:
         population = read_initial_population('data/day_six_test.txt')
     else:
@@ -44,11 +33,15 @@ def day_six_part_two(test=False):
     
     population_counts = count_population(population)
 
-    for _ in range(256):
-        print(population_counts)
+    for _ in range(days):
         population_counts = increment_population_counts(population_counts)
     
     return sum(population_counts)
 
-#print(day_six_part_two(test=True))
+def day_six_part_two(test=False):
+    return day_six_part_one(test=test, days=256)
+
+print(day_six_part_one(test=True))
+print(day_six_part_one())
+print(day_six_part_two(test=True))
 print(day_six_part_two())
