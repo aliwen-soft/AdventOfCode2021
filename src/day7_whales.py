@@ -26,7 +26,7 @@ def day_seven_part_one(test=False):
 
     medium = get_median(positions)
 
-    return get_score_for_n_linier(positions,medium)
+    return get_score_for_n_linear(positions,medium)
 
 
 def day_seven_part_two(test=False):
@@ -45,6 +45,8 @@ def day_seven_part_two(test=False):
     
 
 
+print(day_seven_part_one(test=True))
 print(day_seven_part_one(test=False))
 
-#print(day_seven_part_two(test=False))
+print(day_seven_part_two(test=True))
+print(day_seven_part_two(test=False))
