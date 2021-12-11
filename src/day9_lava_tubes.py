@@ -63,5 +63,8 @@ def day_nine_part_two(test = False):
 
     return sorted_basins[0] * sorted_basins[1] * sorted_basins[2]
 
+print(day_nine_part_one(True))
+print(day_nine_part_one(False))
+
+print(day_nine_part_two(True))
 print(day_nine_part_two(False))
-#print(day_nine_part_two(False))
