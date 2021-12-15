@@ -35,6 +35,9 @@ def light(octos):
                 octos = increment_surrounding(octos,i,j)
     return(light,octos)
 
+def check_all_zero(octos):
+    return all([all([o==0 for o in row]) for row in octos])
+
 def count_zeros(octos):
     return sum([sum([1 for l in line if l == 0]) for line in octos])
 
@@ -42,15 +45,19 @@ def day_eleven_part_one(test = False):
     file_name = "data/day_eleven.txt" if not test else "data/day_eleven_test.txt"
     octos = read_in_octopuses(file_name)
     zeros = 0
-    days = 100
-    for _ in range(0,days):
-        print_octos(octos)
+    days = 2000
+    for i in range(0,days):
+       # print_octos(octos)
         octos = increment(octos)
         repeat = True
         while repeat:
             repeat, octos = light(octos)
+        if check_all_zero(octos):
+            #part 2
+            return i + 1
         zeros = zeros + count_zeros(octos)
-    return(zeros)
+    #part 1
+    #return(zeros)
 
 
 print(day_eleven_part_one(False))
